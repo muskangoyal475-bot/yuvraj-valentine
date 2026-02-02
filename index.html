@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Baby ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom right, #ffd6e8, #ffe9f3);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .page {
+        display: none;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    h1 {
+        font-family: 'Pacifico', cursive;
+        color: #b30059;
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #444;
+        max-width: 500px;
+    }
+
+    .btn {
+        border: none;
+        padding: 12px 30px;
+        margin: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background: #ff1a75;
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .no {
+        background: #ccccff;
+        color: #333;
+        font-size: 13px;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+
+    .letter {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        max-width: 600px;
+    }
+
+    .heart {
+        position: fixed;
+        color: #ff4d88;
+        font-size: 20px;
+        animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+        from {transform: translateY(100vh);}
+        to {transform: translateY(-10vh);}
+    }
+</style>
+</head>
+<body>
+
+<div id="page1" class="page active">
+    <h1>Yuvraj, will you be my Valentine? 🥺💖</h1>
+    <button class="btn yes" onclick="showPage('page4')">YES</button>
+    <button class="btn no" onclick="showPage('page2')">No</button>
+</div>
+
+<div id="page2" class="page">
+    <h1>Are you sure Baby? 😭</h1>
+    <p>I promise I'll share my food… sometimes 🍫💕</p>
+    <button class="btn yes" onclick="showPage('page4')">Okay YES</button>
+    <button class="btn no" onclick="showPage('page3')">Still No</button>
+</div>
+
+<div id="page3" class="page">
+    <h1>Don’t break my cute heart 🥺💔</h1>
+    <p>You’re my favorite person ever 💞</p>
+    <button class="btn yes" onclick="showPage('page4')">Fine YES ❤️</button>
+</div>
+
+<div id="page4" class="page">
+    <div class="letter">
+        <h1>Happy Valentine’s Day Baby 💝</h1>
+        <p>
+            My dearest Yuvraj,<br><br>
+            You make my world softer, brighter, and so much happier.  
+            Your smile is my favorite place and your hugs are my safest home.  
+            Thank you for being my best friend, my comfort, and my biggest blessing.  
+            I’m so lucky to love you and be loved by you. 💕<br><br>
+            Forever yours,<br>
+            Your Baby 💖
+        </p>
+    </div>
+</div>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.innerHTML = "💖";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
